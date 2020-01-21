@@ -5,11 +5,17 @@ let wins = 0;
 let losses = 0;
 
 
-// picking goal each round and 
+
+
+
+// add event listener to click which will assign a value to each crystal 
+// to start the game
+
+$("button").on("click", function(){
+ // picking goal each round and 
 let goal = Math.floor(Math.random() * 102) +19;
 // setting crystal values each round
 let oneCrystalValue = function pickRandomCrystalValue() { 
 math.floor(Math.random() * 12) +1;
 return oneCrystalValue;}
-
-
+})
