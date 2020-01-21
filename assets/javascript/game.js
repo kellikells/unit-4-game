@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-// -------these should all be global variables--------
+//======should be GLOBAL VARIABLES========
 
 var goalNumber;
 var userScore = 0;
@@ -14,9 +14,9 @@ var crystal4;
 var wins = 0;
 var losses = 0;
 
-//-------- functions -----------
+//=============FUNCTIONS==============
 
-// start the game: 
+// --start the game: --
 function pickValuesForGoalAndEachCrystal() {
     goalNumber = Math.floor(Math.random() * 101 + 19); //set value to the goalNumber
 
@@ -27,10 +27,29 @@ function pickValuesForGoalAndEachCrystal() {
 
     $("#goalNumber").text(goalNumber);
     $("#totalScore").text(userScore);
+
+    // update counters 
+    $("#wins").text(wins);
+    $("#losses").text(losses);
 }
 
-// conditionals 
+// ----restartGame:-----
+function restartGame() {
+    goalNumber = Math.floor(Math.random() * 101 + 19); //set value to the goalNumber
 
+    crystal1 = Math.floor(Math.random() * 11 + 1);  // set values to each crystal
+    crystal2 = Math.floor(Math.random() * 11 + 1);
+    crystal3 = Math.floor(Math.random() * 11 + 1);
+    crystal4 = Math.floor(Math.random() * 11 + 1);
+
+    $("#goalNumber").text(goalNumber);
+    // $("#totalScore").text(userScore);
+    userScore = 0;
+    $("#totalScore").text(userScore);
+}
+
+
+// ----conditionals: -------
 function conditionals() {
     if (goalNumber === userScore) {
         wins++;
@@ -43,6 +62,14 @@ function conditionals() {
         } //no ELSE because that just means you keep playing 
 }
 
+//=========== START GAME ON "CLICK"==========================
+
+pickValuesForGoalAndEachCrystal();
+
+then apply click functions for each crystal
+update userScore by adding crystal value to userScore
+apply conditional
+$("")
 
 
 })
