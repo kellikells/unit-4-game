@@ -28,4 +28,21 @@ function pickValuesForGoalAndEachCrystal() {
     $("#goalNumber").text(goalNumber);
     $("#totalScore").text(userScore);
 }
+
+// conditionals 
+
+function conditionals() {
+    if (goalNumber === userScore) {
+        wins++;
+        $("#wins").text(wins);
+        restartGame();    //need to create a function to restart the game
+        } else if (goalNumber < userScore) {
+            losses++;
+            $("$losses").text(losses);
+            restartGame();
+        } //no ELSE because that just means you keep playing 
+}
+
+
+
 })
