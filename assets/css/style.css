@@ -2,13 +2,38 @@
     box-sizing: border-box;
 }
 
-.container {
+.content {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.button {
     position: relative;
     width: 50%;
 }
 
 
-.container img {
+.button img {
     width: 100%;
     height: auto;
+}
+
+#pageTitle {
+    font-size: 5vw;
+    text-align: center;
+}
+
+#directions {
+    font-size: 2vw;
+}
+
+li {
+    font-size: 1vw;
+}
+
+#displayGoal,
+#displayWins,
+#displayLosses,
+#displayTotalScoreForTheRound {
+    font-size: 3vw;
 }
