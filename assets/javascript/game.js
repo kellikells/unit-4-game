@@ -16,23 +16,6 @@ $(document).ready(function () {
 
     //=============FUNCTIONS==============
 
-    // --start the game: --
-    function pickValuesForGoalAndEachCrystal() {
-        goalNumber = Math.floor(Math.random() * 101 + 19); //set value to the goalNumber
-
-        crystal1 = Math.floor(Math.random() * 11 + 1);  // set values to each crystal
-        crystal2 = Math.floor(Math.random() * 11 + 1);
-        crystal3 = Math.floor(Math.random() * 11 + 1);
-        crystal4 = Math.floor(Math.random() * 11 + 1);
-
-        $("#goalNumber").text(goalNumber);
-        $("#totalScore").text(userScore);
-
-        // update counters 
-        $("#wins").text(wins);
-        $("#losses").text(losses);
-    }
-
     // ----restartGame:-----
     function restartGame() {
         goalNumber = Math.floor(Math.random() * 101 + 19); //set value to the goalNumber
@@ -41,6 +24,8 @@ $(document).ready(function () {
         crystal2 = Math.floor(Math.random() * 11 + 1);
         crystal3 = Math.floor(Math.random() * 11 + 1);
         crystal4 = Math.floor(Math.random() * 11 + 1);
+
+        console.log("the value of crystal1 is " + crystal1);
 
         $("#goalNumber").text(goalNumber);
         // $("#totalScore").text(userScore);
@@ -62,37 +47,69 @@ $(document).ready(function () {
         } //no ELSE because that just means you keep playing 
     }
 
-    //=========== START GAME ON "CLICK"==========================
 
-    pickValuesForGoalAndEachCrystal();
+    // --start the game: --
+    function initializeGame() {
 
-    // then apply click functions for each crystal
-    $("#crystal1").on("click", function () {
-        // update userScore by adding crystal value to userScore
-        userScore += crystal1;
-        $("#totalScore").text("userScore");
+        //set value to the goalNumber
+        goalNumber = Math.floor(Math.random() * 101 + 19);
+        
+        // set values to each crystal
+        crystal1 = Math.floor(Math.random() * 11 + 1);
+        crystal2 = Math.floor(Math.random() * 11 + 1);
+        crystal3 = Math.floor(Math.random() * 11 + 1);
+        crystal4 = Math.floor(Math.random() * 11 + 1);
 
-        // apply conditional
-        conditionals();
-    });
+        $("#goalNumber").text(goalNumber);
+        // alert("this is the goalNumber " + goalNumber);
 
-    $("#crystal2").on("click", function () {
-        userScore += crystal2;
-        $("#totalScore").text("userScore");
-        conditionals();
-    });
+        $("#totalScore").text(userScore);
+        // alert("this is the userScore " + userScore);
 
-    $("#crystal3").on("click", function () {
-        userScore += crystal3;
-        $("#totalScore").text("userScore");
-        conditionals();
-    });
+        // update counters 
+        $("#wins").text(wins);
+        $("#losses").text(losses);
 
-    $("#crystal4").on("click", function () {
-        userScore += crystal4;
-        $("#totalScore").text("userScore");
-        conditionals();
-    });
+        // then apply click functions for each crystal
+        $("#crystal1").on("click", function () {
+            // update userScore by adding crystal value to userScore
+            userScore += crystal1;
+            console.log(userScore);
+            $("#totalScore").text(userScore);
+
+        });
+
+        $("#crystal2").on("click", function () {
+            userScore += crystal2;
+            console.log(userScore)
+            $("#totalScore").text(userScore);
+
+        });
+
+        $("#crystal3").on("click", function () {
+            userScore += crystal3;
+            $("#totalScore").text(userScore);
+
+        });
+
+        $("#crystal4").on("click", function () {
+            userScore += crystal4;
+            $("#totalScore").text(userScore);
+
+        });
+        console.log( crystal1 + " " + crystal2 + " " + crystal3 + " " + crystal4);
+        // conditionals();
+    }
+
+
+
+    //=========== START GAME ==========================
+
+    initializeGame();
+
+
+
+
 
 
 
