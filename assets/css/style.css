@@ -3,15 +3,17 @@
 }
 
 .content {
-    max-width: 980px;
+    min-width: 640px;
     margin: 0 auto;
+    padding: 20px;
+    background-color: skyblue;
+    background-image: linear-gradient(to right, skyblue, silver);
 }
 
 .button {
     position: relative;
     width: 50%;
 }
-
 
 .button img {
     width: 100%;
@@ -21,43 +23,73 @@
 #pageTitle {
     font-size: 5vw;
     text-align: center;
-    padding: 10px 0;
-
-font-family: 'Pacifico', cursive;
-
+    padding: 30px 0;
+    font-family: 'Pacifico', cursive;
+    background-color: rgba(255, 255, 255, 0.877);
+    color: skyblue;
+    text-shadow: 3px 4px whitesmoke;
 }
+
+section {
+    border: 4px dashed rgba(255, 255, 255, 0.877);
+    padding: 40px 30px 20px;
+    margin: 15px 10px;
+    /* background-color: skyblue; */
+    /* background-image: linear-gradient(to right, silver, skyblue); */
+}
+
 
 #directions {
     font-size: 3vw;
     font-family: 'Acme', sans-serif;
-font-family: 'Righteous', cursive;
-font-family: 'Permanent Marker', cursive;
-font-family: 'Fredoka One', cursive;
-font-family: 'Indie Flower', cursive;
-font-family: 'Bowlby One SC', cursive;
-font-family: 'Source Code Pro', monospace;
 }
 
 li {
-    font-size: 1vw;
+    font-size: 2vw;
+    font-family: 'Acme', sans-serif;
 }
+
+
+
 
 #displayGoal,
+#displayTotalScoreForTheRound,
 #displayWins,
-#displayLosses,
-#displayTotalScoreForTheRound {
+#displayLosses {
     font-size: 3vw;
+    font-family: 'Offside', cursive;
+    text-align: center;
+    font-weight: bolder; 
 }
 
-#displayLosses,
-#displayWins {
-    font-family: 'Fredoka One', cursive;
-}
-
-#displayGoal{
-
+#displayGoal {
+    padding: 30px 0;
+    position: relative;
+    animation-name: shifty;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
 }
 
 #displayTotalScoreForTheRound {
-    
+    padding-bottom: 30px;
+}
+
+#displayWins {
+    padding: 30px 0;
+}
+
+#displayLosses {
+    padding-bottom: 30px;
+}
+
+  
+
+@keyframes shifty {
+    0% {left:-50px;}
+    25% {left:-25px;}
+    50% {left:0px;}
+    75% {left:25px;}
+    100% {left:50px;}
 }
