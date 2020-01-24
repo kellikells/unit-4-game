@@ -48,12 +48,18 @@ function checkWinOrLose() {
         $("#wins").text(wins);
         // set new values to crystals and goalNumber
         initializeGame();
+        $("#goal-Number").text(goalNumber);
+        userScore = 0;
+        $("#totalScore").text(userScore);
     }
     else if (goalNumber < userScore) {
         losses++;
         $("#losses").text(losses);
         // set new values to crystals and goalNumber
         initializeGame();
+        $("#goal-Number").text(goalNumber);
+        userScore = 0;
+        $("#totalScore").text(userScore);
     }
 }
 
@@ -62,6 +68,7 @@ function crystalTwoWasClicked() {
     userScore += crystal2;
     console.log("userScore is: " + userScore + " and goalNumber is: " + goalNumber);
     $("#totalScore").text(userScore);
+    checkWinOrLose();
 }
 
 function crystalThreeWasClicked() {
@@ -69,6 +76,7 @@ function crystalThreeWasClicked() {
     userScore += crystal3;
     console.log("userScore is: " + userScore + " and goalNumber is: " + goalNumber);
     $("#totalScore").text(userScore);
+    checkWinOrLose();
 }
 
 function crystalFourWasClicked() {
@@ -76,6 +84,7 @@ function crystalFourWasClicked() {
     userScore += crystal4;
     console.log("userScore is: " + userScore + " and goalNumber is: " + goalNumber);
     $("#totalScore").text(userScore);
+    checkWinOrLose();
 }
 
 //=========== START GAME ==========================
@@ -94,18 +103,18 @@ $(document).ready(function () {
     // checking that values are stored to the variables
     console.log(crystal1 + " " + crystal2 + " " + crystal3 + " " + crystal4);
 
-    // ----conditionals: -------
-    if (goalNumber === userScore) {
-        wins++;
-        $("#wins").text(wins);
-        // set new values to crystals and goalNumber
-        initializeGame();
-    } else if (goalNumber < userScore) {
-        losses++;
-        $("$losses").text(losses);
-        // set new values to crystals and goalNumber
-        initializeGame();
-    } //no ELSE because that just means you keep playing 
+    // // ----conditionals: -------
+    // if (goalNumber === userScore) {
+    //     wins++;
+    //     $("#wins").text(wins);
+    //     // set new values to crystals and goalNumber
+    //     initializeGame();
+    // } else if (goalNumber < userScore) {
+    //     losses++;
+    //     $("$losses").text(losses);
+    //     // set new values to crystals and goalNumber
+    //     initializeGame();
+    // } //no ELSE because that just means you keep playing 
 
     // set html content with updated win/loss count
     // winsText.html(wins);
@@ -115,44 +124,3 @@ $(document).ready(function () {
 
 
 
-
-
-    // // then apply click functions for each crystal
-    // $("#crystal1").on("click", function () {
-    //     // update userScore by adding crystal value to userScore
-    //     userScore += crystal1;
-    //     console.log("userScore is: " + userScore + " and goalNumber is: " + goalNumber);
-    //     $("#totalScore").text(userScore);
-
-    // });
-
-    // $("#crystal2").on("click", function () {
-    //     userScore += crystal2;
-    //     console.log("userScore is: " + userScore + " and goalNumber is: " + goalNumber);
-    //     $("#totalScore").text(userScore);
-
-    // });
-
-    // $("#crystal3").on("click", function () {
-    //     userScore += crystal3;
-    //     console.log("userScore is: " + userScore + " and goalNumber is: " + goalNumber);
-    //     $("#totalScore").text(userScore);
-
-    // });
-
-    // $("#crystal4").on("click", function () {
-    //     userScore += crystal4;
-    //     console.log("userScore is: " + userScore + " and goalNumber is: " + goalNumber);
-    //     $("#totalScore").text(userScore);
-
-    // });
-    // console.log(crystal1 + " " + crystal2 + " " + crystal3 + " " + crystal4);
-
-
-
-
-
-
-
-
-// })

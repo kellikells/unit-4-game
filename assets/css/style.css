@@ -21,10 +21,21 @@
 #pageTitle {
     font-size: 5vw;
     text-align: center;
+    padding: 10px 0;
+
+font-family: 'Pacifico', cursive;
+
 }
 
 #directions {
-    font-size: 2vw;
+    font-size: 3vw;
+    font-family: 'Acme', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Fredoka One', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Bowlby One SC', cursive;
+font-family: 'Source Code Pro', monospace;
 }
 
 li {
@@ -36,4 +47,17 @@ li {
 #displayLosses,
 #displayTotalScoreForTheRound {
     font-size: 3vw;
+}
+
+#displayLosses,
+#displayWins {
+    font-family: 'Fredoka One', cursive;
+}
+
+#displayGoal{
+
+}
+
+#displayTotalScoreForTheRound {
+    
 }
